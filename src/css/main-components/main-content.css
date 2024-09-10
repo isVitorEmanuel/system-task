@@ -5,5 +5,4 @@ main.main-content {
     justify-content: center;
     align-items: center;
     margin-top: 4.2em;
-    height: calc(100vh - (4.2em + 8em));
 }
