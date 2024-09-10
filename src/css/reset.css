@@ -1,0 +1,12 @@
+/* 
+ * This file set all default configurations to CSS.
+ */
+
+* {
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    margin: 0;
+    padding: 0; 
+    font-family: Arial, Helvetica, sans-serif;   
+}

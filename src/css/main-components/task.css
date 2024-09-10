@@ -1,0 +1,50 @@
+/**
+ * Define color scheme and typography settings.
+ */
+:root {
+    --primary-color: #871ACA;
+    --secundary-color: #00FFFF;
+    --terciary-color: #FFF;
+}
+
+.wrapper-tasks > .task {
+    margin: 8px;
+    flex-grow: 1;
+}   
+
+/* Configure task-title. */
+
+.task > .task-title {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 3px 3px 0 0;
+    background-color: #871ACA;
+    color: #FFF;
+}
+
+.task > .task-title > h3 {
+    font-size: 1.1em;
+    font-weight: 100;
+}
+
+.task > .task-title > button {
+    background-color: #871ACA;
+    color: var(--terciary-color);
+    cursor: pointer;
+}
+
+.task > .task-title > button:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in;
+}
+
+/* Configure task-content. */
+
+.task > .task-content {
+    border-bottom: 2px solid #871ACA;
+    border-radius: 0 0 3px 3px;
+    padding: 5px;
+    background-color: #FFF;
+}

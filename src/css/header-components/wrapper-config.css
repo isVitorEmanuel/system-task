@@ -1,0 +1,26 @@
+/**
+ * Define color scheme and typography settings.
+ */
+:root {
+    --primary-color: #871ACA;
+    --secundary-color: #00FFFF;
+    --terciary-color: #FFF;
+}
+
+.button-config {
+    width: 3em;
+    height: 3em;
+    border-radius: 0.5em;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.button-config:hover {
+    background-color: #6e08ad;
+    transition: all 0.3s ease;
+}
+
+.button-config > i {
+    color: var(--terciary-color);
+    font-size: 1.9em;
+}

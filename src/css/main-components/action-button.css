@@ -1,0 +1,29 @@
+/**
+ * Define color scheme and typography settings.
+ */
+ :root {
+    --primary-color: #871ACA;
+    --secundary-color: #00FFFF;
+    --terciary-color: #FFF;
+}
+
+.action-button {
+    position: fixed;
+    bottom: 2em;
+}
+
+.action-button > button {
+    width: 2em;
+    height: 2em;
+    font-size: larger;
+    border-radius: 0.5em;
+    background-color: #871ACA;
+    color: var(--terciary-color);
+    cursor: pointer;
+}
+
+.action-button > button:hover {
+    background-color: #630a9a;
+    transform: scale(1.2);
+    transition: all 0.4s ease-in-out;
+}

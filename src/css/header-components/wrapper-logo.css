@@ -1,0 +1,18 @@
+/**
+ * Define color scheme and typography settings.
+ */
+:root {
+    --primary-color: #871ACA;
+    --secundary-color: #00FFFF;
+    --terciary-color: #FFF;
+}
+
+.logo a {
+    display: inline-block;
+    color: #FFF;
+}
+
+.logo a:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.02);
+}

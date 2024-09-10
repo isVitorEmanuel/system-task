@@ -1,0 +1,26 @@
+/**
+ * Define color scheme and typography settings.
+ */
+ :root {
+    --primary-color: #871ACA;
+    --secundary-color: #00FFFF;
+    --terciary-color: #FFF;
+}
+
+.wrapper-tasks {
+    padding: 10px;
+    background-color: #F2F3F1;
+    border-radius: 0.4em;
+    box-shadow: 5px 5px #e0b8b8;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.__nothing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
