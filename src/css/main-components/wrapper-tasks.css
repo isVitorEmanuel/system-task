@@ -13,13 +13,12 @@
     border-radius: 0.4em;
     box-shadow: 5px 5px #e0b8b8;
     display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, auto);
 }
 
-.__nothing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.__nothing {grid-column: 1 / -1;
     text-align: center;
     height: 100%;
     width: 100%;
