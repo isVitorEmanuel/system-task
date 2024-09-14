@@ -23,3 +23,21 @@
     height: 100%;
     width: 100%;
 }
+
+@media only screen and (max-width: 1100px) {
+    .wrapper-tasks {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .wrapper-tasks {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .wrapper-tasks {
+        grid-template-columns: auto;
+    }
+}
