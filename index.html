@@ -23,6 +23,10 @@
         <link rel = "stylesheet" href = "src/css/main-components/wrapper-tasks.css">
         <link rel = "stylesheet" href = "src/css/main-components/task.css">
         <link rel = "stylesheet" href = "src/css/main-components/action-button.css">
+        <link rel = "stylesheet" href = "src/css/popup-component/wrapper-popup.css">
+        <link rel = "stylesheet" href = "src/css/popup-component/pop-up.css">
+        <link rel = "stylesheet" href = "src/css/popup-component/button-field.css">
+        <link rel = "stylesheet" href = "src/css/popup-component/task-button.css">
     </head>
 
     <body>
@@ -47,6 +51,7 @@
         </header>
 
         <main class = "main-content">
+
             <div class = "wrapper-content">
                 <div class = "task-filter">
                     <button class = "button-filter" id = "btn-all">Todas</button>
@@ -62,8 +67,11 @@
             </div>
 
             <div class = "action-button">
-                <button><i class = "fa-solid fa-plus"></i></button>
+                <button id = "actButton" ><i class = "fa-solid fa-plus"></i></button>
             </div>
+            
         </main>
+
+        <script src = "src/js/index.js" type = "module"></script>
     </body>
 </html>

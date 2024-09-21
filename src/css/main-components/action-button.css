@@ -10,7 +10,7 @@
 .action-button {
     position: fixed;
     bottom: 1.3em;
-    z-index: 999998;
+    z-index: 99;
 }
 
 .action-button > button {

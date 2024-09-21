@@ -1,0 +1,72 @@
+/**
+ * Define color scheme and typography settings.
+ */
+ :root {
+    --primary-color: #871ACA;
+    --secundary-color: #00FFFF;
+    --terciary-color: #FFF;
+}
+
+.pop-up {
+    width: 50%;
+    padding: 0 8%;
+    padding-top: 2%;
+    background-color: #F2F3F1;
+    box-shadow: 5px 5px #E0B8B8;
+    border-radius: 5px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1em 0;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #0D47A1;
+}
+
+label {
+    color: #0D47A1;
+    font-weight: bold;
+    font-size: 1.05em;
+    padding: 0 0.5em;
+    margin-bottom: 0.5em;
+    border-left: 2px solid var(--primary-color);
+}
+
+.input {
+    width: 100%;
+    border: 2px solid #E0B8B8;
+    border-radius: 5px;
+    padding: 0.5em;
+    font-size: 1em;
+    outline: none;
+}
+
+.input:focus {
+    border: 2px solid var(--primary-color);
+    transition: all ease-in-out .2s;
+}
+
+textarea {
+    height: 30vh;
+    resize: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .pop-up {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    label {
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,28 @@
+/**
+ * Define color scheme and typography settings.
+ */
+ :root {
+    --primary-color: #871ACA;
+    --secundary-color: #00FFFF;
+    --terciary-color: #FFF;
+}
+
+.task-button {
+    padding: 8px 20px;
+    margin: 0 1em;
+    border-radius: 5px;
+    background-color: #871ACA;
+    color: #FFF;
+    font-size: 1.05em;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.task-button:hover {
+    transform: scale(1.1);
+}
+
+/* Specify styles */
+#btnCan {
+    background-color: #CA1A3A;
+}

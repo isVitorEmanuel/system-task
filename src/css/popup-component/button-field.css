@@ -1,0 +1,15 @@
+/**
+ * Define color scheme and typography settings.
+ */
+ :root {
+    --primary-color: #871ACA;
+    --secundary-color: #00FFFF;
+    --terciary-color: #FFF;
+}
+
+div.button-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
