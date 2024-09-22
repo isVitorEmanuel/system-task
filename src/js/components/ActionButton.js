@@ -1,4 +1,5 @@
-import { handleAdd, handleCancel } from "./Buttons.js";
+import handleAdd from "./AddButton.js";
+import handleCancel from "./CancelButton.js";
 
 const actButton = document.querySelector('#actButton');
 
@@ -19,9 +20,9 @@ actButton.addEventListener('click', (e) => {
     title.innerHTML = 'Nova Tarefa';
     popup.appendChild(title);
 
-    const errorInput = document.createElement('span');
-    errorInput.setAttribute('class', 'error-input');
-    popup.appendChild(errorInput);
+    const feedbackInput = document.createElement('span');
+    feedbackInput.setAttribute('id', 'feedback-input');
+    popup.appendChild(feedbackInput);
 
     const form = document.createElement('form');
     popup.appendChild(form);
@@ -39,10 +40,12 @@ actButton.addEventListener('click', (e) => {
     input.setAttribute('type', 'text');
     input.setAttribute('name', 'title-input');
     input.setAttribute('id', 'title-input');
+    input.setAttribute('required', true);
+    input.setAttribute('maxlength', 24);
 
     inputFieldOne.appendChild(labelOne);
     inputFieldOne.appendChild(input);
-    popup.appendChild(inputFieldOne);
+    form.appendChild(inputFieldOne);
 
     /* Configure the second input. */
     const inputFieldTwo = document.createElement('div');
@@ -59,7 +62,7 @@ actButton.addEventListener('click', (e) => {
 
     inputFieldTwo.appendChild(labelTwo);
     inputFieldTwo.appendChild(textArea);
-    popup.appendChild(inputFieldTwo);
+    form.appendChild(inputFieldTwo);
 
     /* Configure the button's section. */
     const buttonsField = document.createElement('div');
@@ -75,15 +78,17 @@ actButton.addEventListener('click', (e) => {
     });
 
     const buttonAdd  = document.createElement('button');
-    buttonAdd.setAttribute('type', 'button');
+    buttonAdd.setAttribute('type', 'submit');
     buttonAdd.setAttribute('id', 'btnAdd');
     buttonAdd.setAttribute('class', 'task-button');
     buttonAdd.innerHTML = 'Adicionar';
-    buttonAdd.addEventListener('click', handleAdd);
+    buttonAdd.addEventListener('click', (e) => {
+        handleAdd(e);
+    });
 
     buttonsField.appendChild(buttonCan);
     buttonsField.appendChild(buttonAdd);
-    popup.appendChild(buttonsField);
+    form.appendChild(buttonsField);
 
     body.prepend(wrapperPopup);
 });
