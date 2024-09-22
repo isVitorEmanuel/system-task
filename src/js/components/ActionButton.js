@@ -4,7 +4,8 @@ import handleCancel from "./CancelButton.js";
 const actButton = document.querySelector('#actButton');
 
 /*
- * Configuration of the main button.
+ * Main button configuration.
+ * When clicked, it opens a popup form for adding a new task.
  */
 actButton.addEventListener('click', (e) => {
     const body = document.body;

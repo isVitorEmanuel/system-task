@@ -1,22 +1,20 @@
 import actButton from "./components/ActionButton.js";
 import Task from "./model/Task.js";
+import  Render from './model/Render.js';
 
 let allTasks = [];
 
+// Load from LocalStorage all tasks.
 if (JSON.parse(localStorage.getItem('values')) != null) {
     for (let taskJSON of JSON.parse(localStorage.getItem('values'))) {
         const task = new Task(taskJSON.m_title, taskJSON.m_desc);
         task.setID(taskJSON.m_id);
         task.addTask(allTasks);
     }
-} else {
-    const wrapperTasks = document.querySelector('#wrapper-tasks');
-    
-    const divNothing = document.createElement('div');
-    divNothing.setAttribute('class', '__nothing');
-    divNothing.textContent = 'Não foram encontradas tarefas!';
-
-    wrapperTasks.appendChild(divNothing);
 }
+
+// Render initial tasks.
+Render.setTasks(allTasks);
+Render.renderTasks();
 
 export { allTasks };

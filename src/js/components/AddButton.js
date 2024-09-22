@@ -4,10 +4,14 @@ import Task from "../model/Task.js";
 let interval = null;
 
 /** 
- * Function to set style in the span.
+ * Function to set styles in the feedback span.
+ * It changes the border, background color, and text based on validation state.
+ * @param {boolean} state - The validation state (true for valid, false for invalid).
+ * @param {HTMLElement} fback - The feedback span element.
  */
 function setSpan(state, fback) {
     if (!state) {
+        // Set style for invalid input
         fback.setAttribute('class', 'feedback-input');
         fback.style.border = '2px solid #F00';
         fback.style.backgroundColor = '#F75252'; 
@@ -16,6 +20,7 @@ function setSpan(state, fback) {
         return;
     }
 
+    // Set style for valid input
     fback.setAttribute('class', 'feedback-input');
     fback.style.border = '2px solid #008000 ';
     fback.style.backgroundColor = '#6b8e23'; 
@@ -23,7 +28,11 @@ function setSpan(state, fback) {
 }
 
 /**
- * Function to validate the input title.
+ * Function to validate the title input field.
+ * Checks whether the input is missing a value and calls setSpan based on validity.
+ * @param {HTMLElement} input - The title input field element.
+ * @param {HTMLElement} fback - The feedback span element.
+ * @returns {boolean} - True if the title is valid, false otherwise.
  */
 function validateTitle(input, fback) {
     const stateValidation = input.validity;
@@ -37,7 +46,10 @@ function validateTitle(input, fback) {
 };
 
 /** 
- * Function to validate the input description.
+ * Function to validate the description input field.
+ * If the description is empty, it returns a default message.
+ * @param {HTMLElement} input - The description input field element.
+ * @returns {string} - The description value or a default message.
  */
 function validateDescription(input) {
     if (input.value == '') { return 'Sem descrição'; }
@@ -45,9 +57,11 @@ function validateDescription(input) {
 };
 
 /**
- * When the add button is clicked, validate the data input and 
- * save it as a new task if the input is valid; otherwise, do not 
- * save it and display an alert message
+ * Event handler for the Add button.
+ * When the Add button is clicked, this function validates the title input
+ * and, if valid, creates and saves a new task. It also provides feedback
+ * via the feedback span and temporarily displays a success or error message.
+ * @param {Event} e - The event triggered by clicking the Add button.
  */
 const handleAdd = (e) => {
     e.preventDefault();
@@ -65,6 +79,7 @@ const handleAdd = (e) => {
         const titleValue = titleField.value;
 
         let task = new Task(titleValue, descValue);
+        task.renderTask();
         task.addTask(allTasks);
 
         localStorage.clear();
