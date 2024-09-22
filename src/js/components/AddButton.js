@@ -1,6 +1,9 @@
+import addTask from "../index.js";
+import Task from "../model/Task.js";
+
 let interval = null;
 
-/* 
+/** 
  * Function to set style in the span.
  */
 function setSpan(state, fback) {
@@ -19,7 +22,7 @@ function setSpan(state, fback) {
     fback.innerHTML = 'tarefa adicionada!';
 }
 
-/* 
+/**
  * Function to validate the input title.
  */
 function validateTitle(input, fback) {
@@ -33,7 +36,7 @@ function validateTitle(input, fback) {
     return true;
 };
 
-/* 
+/** 
  * Function to validate the input description.
  */
 function validateDescription(input) {
@@ -41,7 +44,15 @@ function validateDescription(input) {
     return input.value;
 };
 
-/*
+/**
+ * 
+ */
+function renderTask(task) {
+    const wrapperTask = document.querySelector('#wrapper-tasks');
+    wrapperTask.appendChild(task.getTask());
+}
+
+/**
  * When the add button is clicked, validate the data input and 
  * save it as a new task if the input is valid; otherwise, do not 
  * save it and display an alert message
@@ -61,10 +72,10 @@ const handleAdd = (e) => {
         const descValue = validateDescription(descField);
         const titleValue = titleField.value;
 
-        console.log(descValue);
-        console.log(titleValue);
+        let task = new Task(titleValue, descValue);
 
-        // TODO: Create the task.
+        addTask(task);
+        renderTask(task);
     } 
 
     if (interval) { clearTimeout(interval); }
