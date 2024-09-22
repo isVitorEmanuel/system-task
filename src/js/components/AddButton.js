@@ -1,4 +1,4 @@
-import addTask from "../index.js";
+import { allTasks } from "../index.js";
 import Task from "../model/Task.js";
 
 let interval = null;
@@ -45,14 +45,6 @@ function validateDescription(input) {
 };
 
 /**
- * 
- */
-function renderTask(task) {
-    const wrapperTask = document.querySelector('#wrapper-tasks');
-    wrapperTask.appendChild(task.getTask());
-}
-
-/**
  * When the add button is clicked, validate the data input and 
  * save it as a new task if the input is valid; otherwise, do not 
  * save it and display an alert message
@@ -73,9 +65,10 @@ const handleAdd = (e) => {
         const titleValue = titleField.value;
 
         let task = new Task(titleValue, descValue);
+        task.addTask(allTasks);
 
-        addTask(task);
-        renderTask(task);
+        localStorage.clear();
+        localStorage.setItem('values', JSON.stringify(allTasks));
     } 
 
     if (interval) { clearTimeout(interval); }

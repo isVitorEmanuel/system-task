@@ -19,11 +19,13 @@ class Task {
         this.createDomTask();
     }
 
+    getID() { return this.m_id; }
     getTitle() { return this.m_title; }
     getDesc() { return this.m_desc; }
     getState() { return this.m_state; }
     getTask() { return this.m_domTask; }
 
+    setID(id) { this.m_id = id; }
     setTitle(title) { this.m_title = title; }
     setDesc(desc) { this.m_desc = desc; }
     setDesc(state) { this.m_state = state; }
@@ -53,6 +55,15 @@ class Task {
         taskDiv.appendChild(taskContentDiv);
 
         this.m_domTask = taskDiv;
+    }
+
+    /**
+    * 
+    */
+    addTask(allTasks) {
+        const wrapperTask = document.querySelector('#wrapper-tasks');
+        wrapperTask.appendChild(this.getTask());
+        allTasks.push(this);
     }
 }
 
