@@ -9,12 +9,14 @@ class Task {
     m_desc;
     m_state;
     m_domTask;
+    m_parenteNode;
 
     constructor(title, desc) {
         this.m_id = `${Date.now()}`;
         this.m_title = title;
         this.m_desc = desc;
         this.m_state = TaskState.PENDING;
+        this.m_parenteNode = document.querySelector('#wrapper-tasks');
 
         this.createDomTask();
     }
@@ -61,8 +63,7 @@ class Task {
     * 
     */
     addTask(allTasks) {
-        const wrapperTask = document.querySelector('#wrapper-tasks');
-        wrapperTask.appendChild(this.getTask());
+        this.m_parenteNode.appendChild(this.getTask());
         allTasks.push(this);
     }
 }

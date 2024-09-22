@@ -10,7 +10,13 @@ if (JSON.parse(localStorage.getItem('values')) != null) {
         task.addTask(allTasks);
     }
 } else {
+    const wrapperTasks = document.querySelector('#wrapper-tasks');
     
+    const divNothing = document.createElement('div');
+    divNothing.setAttribute('class', '__nothing');
+    divNothing.textContent = 'Não foram encontradas tarefas!';
+
+    wrapperTasks.appendChild(divNothing);
 }
 
 export { allTasks };
